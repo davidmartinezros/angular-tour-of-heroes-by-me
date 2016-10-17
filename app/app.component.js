@@ -12,10 +12,6 @@ var core_1 = require('@angular/core');
 var AppComponent = (function () {
     function AppComponent() {
         this.title = 'Tour of Heroes';
-        this.hero = {
-            id: 1,
-            name: 'Windstorm'
-        };
         this.heroes = HEROES;
     }
     AppComponent.prototype.onSelect = function (hero) {
