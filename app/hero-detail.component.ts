@@ -11,6 +11,7 @@ import { Hero } from './hero';
   moduleId: module.id,
   selector: 'my-hero-detail',
   templateUrl: 'hero-detail.component.html',
+  styleUrls: ['hero-detail.component.css'],
 })
 
 export class HeroDetailComponent implements OnInit {
