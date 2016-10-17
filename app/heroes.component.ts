@@ -1,10 +1,18 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
+import { RouterModule }   from '@angular/router';
 
 import { Hero } from './hero';
 import { HEROES } from './mock-heroes';
 
 import { HeroService } from './hero.service';
+
+RouterModule.forRoot([
+  {
+    path: 'heroes',
+    component: HeroesComponent
+  }
+])
 
 @Component({
   selector: 'my-heroes',
