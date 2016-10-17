@@ -23,6 +23,10 @@ import { HeroService } from './hero.service';
         redirectTo: '/dashboard',
         pathMatch: 'full'
       },
+      {
+        path: 'detail/:id',
+        component: HeroDetailComponent
+      },
     ])
   ],
   declarations: [
