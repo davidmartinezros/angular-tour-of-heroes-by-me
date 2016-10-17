@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { Hero } from './hero';
 import { HEROES } from './mock-heroes';
 
+import { HeroService } from './hero.service';
+
 @Component({
   selector: 'my-app',
   template: `
@@ -67,12 +69,21 @@ import { HEROES } from './mock-heroes';
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
   }
-`]
+`],
+  providers: [HeroService]
 })
 export class AppComponent {
   title = 'Tour of Heroes';
-  heroes = HEROES;
+  heroes: Hero[];
   selectedHero: Hero;
+
+  constructor(private heroService: HeroService) {
+    
+  }
+
+  getHeroes(): void {
+    this.heroes = this.heroService.getHeroes();
+  }
   
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
