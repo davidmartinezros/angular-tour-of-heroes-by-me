@@ -13,8 +13,12 @@ var mock_heroes_1 = require('./mock-heroes');
 var HeroService = (function () {
     function HeroService() {
     }
+    // Old version withou Promise
+    //getHeroes(): Hero[] {
+    //    return HEROES;
+    //}
     HeroService.prototype.getHeroes = function () {
-        return mock_heroes_1.HEROES;
+        return Promise.resolve(mock_heroes_1.HEROES);
     };
     HeroService = __decorate([
         core_1.Injectable(), 

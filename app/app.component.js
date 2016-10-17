@@ -19,7 +19,10 @@ var AppComponent = (function () {
         this.getHeroes();
     };
     AppComponent.prototype.getHeroes = function () {
-        this.heroes = this.heroService.getHeroes();
+        var _this = this;
+        // Old version without Promise
+        // this.heroes = this.heroService.getHeroes();
+        this.heroService.getHeroes().then(function (heroes) { return _this.heroes = heroes; });
     };
     AppComponent.prototype.onSelect = function (hero) {
         this.selectedHero = hero;
